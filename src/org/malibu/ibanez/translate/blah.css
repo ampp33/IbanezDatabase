@@ -1,0 +1,11 @@
+@import "vars";
+@import "mixins";
+@import "components";
+
+
+// My Project
+
+.my-project {
+	color: @text-color;
+	background: @base-background-color;
+}
