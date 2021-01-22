@@ -30,7 +30,7 @@ public class BodyMaterialTranslator implements SpecDetailTranslator {
 	private static final String INLAY_MATERIAL = "Inlay";
 	
 	private TranslationReport report = null;
-
+	
 	public TranslationReport translate(Guitar guitar, Spec parentSpec, SpecDetails specDetail) {
 		report = new TranslationReport();
 		// null checks

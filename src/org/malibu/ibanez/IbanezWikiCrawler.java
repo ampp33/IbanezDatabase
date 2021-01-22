@@ -1,5 +1,6 @@
 package org.malibu.ibanez;
 
+import java.io.File;
 import java.io.IOException;
 import java.sql.SQLException;
 import java.util.LinkedList;
@@ -12,8 +13,8 @@ import org.jsoup.nodes.Document;
 import org.jsoup.select.Elements;
 import org.malibu.ibanez.api.Guitar;
 import org.malibu.ibanez.dao.IbanezDao;
-import org.malibu.ibanez.dao.IbanezDatabaseDao;
 import org.malibu.ibanez.dao.IbanezException;
+import org.malibu.ibanez.dao.IbanezFilesystemDao;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
@@ -43,7 +44,8 @@ public class IbanezWikiCrawler {
 	public void process() throws IOException, SQLException {
 		
 		log.info("Connecting to target database...");
-		IbanezDao dao = new IbanezDatabaseDao("ibanez");
+//		IbanezDao dao = new IbanezDatabaseDao("ibanez");
+		IbanezDao dao = new IbanezFilesystemDao(new File("C:\\Users\\ampp3\\Desktop\\guitars.txt"));
 		
 		log.info("retrieving guitar urls...");
 		
