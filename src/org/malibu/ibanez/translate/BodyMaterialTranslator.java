@@ -13,7 +13,7 @@ public class BodyMaterialTranslator implements SpecDetailTranslator {
 	// TODO: maintain list of woods and only use those (so we don't get words like "beautiful" or "sandwich"
 	// have this list stored in the database
 	
-	private static final String SPLIT_TOKENS = "w/|with|and|\\&";
+	private static final String SPLIT_TOKENS = "w/| with | and |\\&";
 	
 	// suffixes
 	private static final String TOP = "top";

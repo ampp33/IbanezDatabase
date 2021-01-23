@@ -72,6 +72,10 @@ public class MaterialTranslator implements SpecDetailTranslator {
 	// !!!!!!!!!!!!!!!!!!!!!
 	// Create a new TAGS table and assign tags based on values in present in these fields, that way we don't have to CHANGE these values
 	
+	// NEED TO DO TWO THINGS IMPORTANT HERE
+	// 1. update body material translator to break things apart appropriately
+	// 2. create a tagging mechanism that ONLY looks for materials or important attributes (reverse headstock, series, etc)
+	
 	// BINDING ONLY
 	
 	// White

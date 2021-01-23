@@ -24,7 +24,7 @@ public class TranslationTester {
 				translationProcessor.translate(guitar);
 //				System.out.println(guitar.toString());
 			}
-			System.out.println(mt.getUniqueStrings().toString());
+//			System.out.println(mt.getUniqueStrings().toString());
 		}
 		
 	}
