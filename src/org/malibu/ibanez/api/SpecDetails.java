@@ -8,6 +8,7 @@ public class SpecDetails {
 	
 	private List<Integer> yearsProduced = new ArrayList<>();
 	private String description;
+	private boolean requiresReview = false;
 	
 	public List<Integer> getYearsProduced() {
 		return yearsProduced;
@@ -19,6 +20,14 @@ public class SpecDetails {
 		this.description = description;
 	}
 	
+	public boolean requiresReview() {
+		return requiresReview;
+	}
+
+	public void setRequiresReview(boolean requiresReview) {
+		this.requiresReview = requiresReview;
+	}
+	
 	@Override
 	public String toString() {
 		StringBuilder buffer = new StringBuilder();
@@ -26,6 +35,11 @@ public class SpecDetails {
 		boolean hasDescription = description != null && description.trim().length() > 0;
 		
 		buffer.append("{");
+		
+		if(requiresReview) {
+			buffer.append(" !requires-review! ");
+		}
+		
 		if(!yearsProduced.isEmpty()) {
 			buffer.append(Arrays.toString(yearsProduced.toArray()));
 			if(hasDescription) {

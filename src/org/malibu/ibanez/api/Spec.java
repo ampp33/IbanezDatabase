@@ -6,7 +6,8 @@ import java.util.List;
 public class Spec {
 	
 	private String specTitle;
-	List<SpecDetails> specDetails = new ArrayList<>();
+	private List<SpecDetails> specDetails = new ArrayList<>();
+	private boolean requiresReview = false;
 	
 	public String getSpecTitle() {
 		return specTitle;
@@ -20,13 +21,25 @@ public class Spec {
 		return specDetails;
 	}
 	
+	public boolean requiresReview() {
+		return requiresReview;
+	}
+
+	public void setRequiresReview(boolean requiresReview) {
+		this.requiresReview = requiresReview;
+	}
+
 	@Override
 	public String toString() {
 		StringBuilder buffer = new StringBuilder();
 		
 		buffer.append(specTitle);
-		buffer.append(": ");
-		buffer.append(" [");
+		
+		if(requiresReview) {
+			buffer.append(" !requires-review!");
+		}
+		
+		buffer.append(": [");
 		
 		String comma = "";
 		for (SpecDetails detail : specDetails) {
